@@ -13,8 +13,16 @@ class DepartmentTest < Minitest::Test
     bob = Employee.new("Bob Smith", "bsmith@gmail.com", "864-555-9999", 50000)
   end
 
+  def bobs_info
+    ["Bob Smith", "bsmith@gmail.com", "864-555-9999", 50000]
+  end
+
+  def jill
+    jill = Employee.new("Jill Potts", "jpotts@gmail.com", "864-555-8888", 55000)
+  end
+
   def finance
-    finance = Department.new("Finance")
+    @finance = @finance || Department.new("Finance")
   end
 
   def test_class_exists
@@ -26,7 +34,8 @@ class DepartmentTest < Minitest::Test
   end
 
   def test_add_employees
-    assert_equal ["Bob Smith", "bsmith@gmail.com", "864-555-9999", 50000], finance.add_employee_to_department(bob)
+    assert_equal [bobs_info], finance.add_employee(bob.employee_info)
+    assert_equal 1, finance.employees.size
   end
 
 end
