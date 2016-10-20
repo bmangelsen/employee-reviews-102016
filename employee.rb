@@ -7,11 +7,6 @@ class Employee
     @email = email
     @phone_number = phone_number
     @salary = salary
-    @employee_info = []
-  end
-
-  def employee_info
-    employee_info = [name, email, phone_number, salary]
   end
 
   def review_response(review)
