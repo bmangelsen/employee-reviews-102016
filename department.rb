@@ -13,4 +13,11 @@ class Department
     employees << employee_info
   end
 
+  def sum_all_salaries
+    total = 0
+    employees.each do |el|
+      total += el[3]
+    end
+    total
+  end
 end

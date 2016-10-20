@@ -36,6 +36,8 @@ class DepartmentTest < Minitest::Test
   end
 
   def test_get_total_salary
+    assert_equal [bob.employee_info], finance.add_employee(bob.employee_info)
+    assert_equal [bob.employee_info, jill.employee_info], finance.add_employee(jill.employee_info)
     assert_equal 105000, finance.sum_all_salaries
   end
 
