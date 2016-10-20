@@ -14,7 +14,7 @@ class Employee
     employee_info = [name, email, phone_number, salary]
   end
 
-  def review(review)
+  def review_response(review)
     positive_keywords = ["asset", "pleasure", "happy"]
     negative_keywords = ["confusion", "negative", "inadequate"]
     if review.match(positive_keywords.join("|"))
@@ -24,4 +24,9 @@ class Employee
       "unsatisfactory"
     end
   end
+
+  def give_raise
+    @salary = salary * 1.05
+  end
+
 end
