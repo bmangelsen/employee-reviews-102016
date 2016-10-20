@@ -25,5 +25,3 @@ class Employee
     end
   end
 end
-
-#regexish_string = keywords.join("|")
