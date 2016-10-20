@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative './employee'
 
-class Employee < Minitest::Test
+class EmployeeTest < Minitest::Test
 
   def self.test_order
       :alpha
