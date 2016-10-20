@@ -12,4 +12,9 @@ class DepartmentTest < Minitest::Test
     assert Department
   end
 
+  def test_class_initialize
+    finance = Department.new("Finance")
+    assert_equal "Finance", finance.department_name
+  end
+
 end
