@@ -14,4 +14,16 @@ class Employee
     employee_info = [name, email, phone_number, salary]
   end
 
+  def review(review)
+    positive_keywords = ["asset", "pleasure", "happy"]
+    negative_keywords = ["confusion", "negative", "inadequate"]
+    if review.match(positive_keywords.join("|"))
+      "satisfactory"
+    else
+      review.match(negative_keywords.join("|"))
+      "unsatisfactory"
+    end
+  end
 end
+
+#regexish_string = keywords.join("|")
