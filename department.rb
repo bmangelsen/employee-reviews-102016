@@ -1,23 +1,42 @@
 require_relative './employee'
+require_relative './employee_test'
+require_relative './department_test'
 
 class Department
 
-  attr_accessor :department_name, :employees
+  attr_accessor :department_name, :department_employees
 
   def initialize(department_name)
     @department_name = department_name
-    @employees = []
+    @department_employees = []
   end
 
-  def add_employee(employee_info)
-    employees << employee_info
+  def add_employee(employee)
+    department_employees << employee
   end
 
   def sum_all_salaries
     total = 0
-    employees.each do |el|
-      total += el[3]
+    department_employees.each do |el|
+      total += el.salary
     end
     total
+  end
+
+  def give_department_raises(department_wide_raise)
+    deserve_raises = []
+    raise_values = []
+    department_employees.each do |employee|
+      if employee.review_response(good_review)
+      deserve_raises << employee
+      end
+      end
+    deserve_raises.each do |employee|
+      employee.salary += (department_wide_raise / deserve_raises.count)
+    end
+    deserve_raises.each do |employee|
+      raise_values << employee.salary
+    end
+    raise_values
   end
 end
