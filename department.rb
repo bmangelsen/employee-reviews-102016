@@ -9,7 +9,6 @@ class Department
   def initialize(department_name)
     @department_name = department_name
     @department_employees = []
-    @review_responses = []
   end
 
   def add_employee(employee)
@@ -26,7 +25,6 @@ class Department
 
   def give_department_raises(department_wide_raise)
     deserve_raises = []
-    raise_values = []
     department_employees.each do |employee|
       if employee.good_response == true
       deserve_raises << employee
@@ -34,9 +32,6 @@ class Department
     end
     deserve_raises.each do |employee|
       employee.salary += (department_wide_raise / deserve_raises.count)
-    end
-    department_employees.each do |employee|
-      raise_values << employee.salary
     end
   end
 end
