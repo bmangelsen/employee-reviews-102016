@@ -16,7 +16,7 @@ class Department
   def sum_all_salaries
     total = 0
     department_employees.each do |employee|
-      total += employee.salary
+      total = yield(total, employee.salary)
     end
     total
   end
