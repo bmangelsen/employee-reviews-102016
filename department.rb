@@ -1,6 +1,4 @@
 require_relative './employee'
-require_relative './employee_test'
-require_relative './department_test'
 
 class Department
 
