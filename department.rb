@@ -15,8 +15,8 @@ class Department
 
   def sum_all_salaries
     total = 0
-    department_employees.each do |el|
-      total += el.salary
+    department_employees.each do |employee|
+      total += employee.salary
     end
     total
   end
