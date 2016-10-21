@@ -4,11 +4,12 @@ require_relative './department_test'
 
 class Department
 
-  attr_accessor :department_name, :department_employees
+  attr_accessor :department_name, :department_employees, :review_responses
 
   def initialize(department_name)
     @department_name = department_name
     @department_employees = []
+    @review_responses = []
   end
 
   def add_employee(employee)
@@ -27,16 +28,15 @@ class Department
     deserve_raises = []
     raise_values = []
     department_employees.each do |employee|
-      if employee.review_response(good_review)
+      if employee.review_response == "satisfactory"  #PROBLEM LINE
       deserve_raises << employee
       end
-      end
+    end
     deserve_raises.each do |employee|
       employee.salary += (department_wide_raise / deserve_raises.count)
     end
-    deserve_raises.each do |employee|
+    department_employees.each do |employee|
       raise_values << employee.salary
     end
-    raise_values
   end
 end
