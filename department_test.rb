@@ -54,7 +54,7 @@ class DepartmentTest < Minitest::Test
   def test_get_total_salary
     finance.add_employee(bob)
     finance.add_employee(jill)
-    assert_equal 105000, finance.sum_all_salaries
+    assert_equal 105000, finance.sum_all_salaries {|acc, el| acc + el}
   end
 
   def test_distribute_raises
