@@ -1,6 +1,6 @@
 class Employee
 
-  attr_accessor :name, :email, :phone_number, :salary, :review_text, :review_response
+  attr_accessor :name, :email, :phone_number, :salary, :review_text, :good_response
 
   def initialize(name, email, phone_number, salary)
     @name = name
@@ -8,7 +8,7 @@ class Employee
     @phone_number = phone_number
     @salary = salary
     @review_text = ""
-    @review_response = ""
+    @good_response = nil
   end
 
   def give_review(review)
@@ -19,9 +19,9 @@ class Employee
     positive_keywords = ["asset", "pleasure", "happy"]
     negative_keywords = ["confusion", "negative", "inadequate"]
     if review.match(positive_keywords.join("|"))
-      @review_response = "satisfactory"
+      @good_response = true
     elsif review.match(negative_keywords.join("|"))
-      @review_response = "unsatisfactory"
+      @good_response = false
     else
       nil
     end
