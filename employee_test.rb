@@ -31,12 +31,17 @@ class EmployeeTest < Minitest::Test
     assert_equal 50000, bob.salary
   end
 
+  def test_give_employee_review
+    assert_equal good_review, bob.give_review(good_review)
+    assert_equal bad_review, bob.give_review(bad_review)
+  end
+
   def test_for_positive_review
-    assert_equal "satisfactory", bob.review_response(good_review)
+    assert_equal "satisfactory", bob.determine_review_response(good_review)
   end
 
   def test_for_negative_review
-    assert_equal "unsatisfactory", bob.review_response(bad_review)
+    assert_equal "unsatisfactory", bob.determine_review_response(bad_review)
   end
 
   def test_give_raise
