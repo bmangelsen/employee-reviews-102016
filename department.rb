@@ -28,7 +28,7 @@ class Department
     deserve_raises = []
     raise_values = []
     department_employees.each do |employee|
-      if employee.review_response == "satisfactory"  #PROBLEM LINE
+      if employee.review_response == "satisfactory"
       deserve_raises << employee
       end
     end
