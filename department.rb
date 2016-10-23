@@ -2,7 +2,8 @@ require_relative './employee'
 
 class Department
 
-  attr_accessor :department_name, :department_employees
+  attr_accessor :department_name
+  attr_reader :department_employees
 
   def initialize(department_name)
     @department_name = department_name
