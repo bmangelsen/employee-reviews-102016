@@ -2,7 +2,8 @@ require 'csv'
 
 class Employee
 
-  attr_accessor :name, :email, :phone_number, :salary, :review_text, :good_response
+  attr_accessor :name, :email, :phone_number, :salary, :review_text
+  attr_reader :good_response
 
   def initialize(name, email, phone_number, salary)
     @name = name
