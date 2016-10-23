@@ -12,7 +12,7 @@ class Employee
     @salary = salary
     @review_text = ""
     @good_response = nil
-    CSV.open("my_file.csv", "a") do |csv|
+    CSV.open("employees.csv", "a") do |csv|
       csv << [name, email, phone_number, salary]
     end
   end

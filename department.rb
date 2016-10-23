@@ -8,6 +8,9 @@ class Department
   def initialize(department_name)
     @department_name = department_name
     @department_employees = []
+    CSV.open("departments.csv", "a") do |csv|
+      csv << [department_name]
+    end
   end
 
   def add_employee(employee)
